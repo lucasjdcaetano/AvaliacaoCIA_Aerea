@@ -12,17 +12,18 @@ public class Pista implements GetId {
         
         this.id = GetId.getNextId(pistas);
         this.numero = numero;
+        pistas.add(this);
         }
         
         public int getId() {
             return id;
         }
-        public String getNumero(){
-            return numero;
-        }
         public void setId(int id) {
             this.id = id;
         }
+        public String getNumero(){
+            return numero;
+        }        
         public void setNumero(String numero){
             this.numero = numero;
         }
@@ -38,10 +39,28 @@ public class Pista implements GetId {
         public static void removePista(int id) throws Exception {
             Pista pista = getPista(id);
             pistas.remove(pista);
+            // remover pista: Pista pistaExcluida =  "select *from pista where id_pista =" +id;
+
+            // remover pista: "delete from pista where id_pista =" +id;
+            // return pistaExcluida;
         }
         
         @Override
         public String toString() {
             return "Número =" + numero + "\n";
+        }
+        
+        public static Pista getById(int id) {
+            for(Pista pista : pistas){
+                if(pista.getId() == id){
+                    return pista;
+                }
+            }
+            // String query = "Select * from pista where id_pista =" + id;
+            // PrepareStatement stmp = naoseioq.execute(query); 
+
+            return null;
+
+
         }
 }

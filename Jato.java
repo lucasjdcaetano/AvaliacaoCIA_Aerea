@@ -8,9 +8,21 @@ public class Jato extends Aeronave{
 
     private static ArrayList<Jato> jatos = new ArrayList<>();
 
+    public Jato(){
+
+    }
+
     public Jato(int id, String marca, String modelo, int velocidade, String cor){
         
         super(GetId.getNextId(jatos), marca, modelo);
+        this.velocidade = velocidade;
+        this.cor = cor;
+
+        jatos.add(this);
+    }
+    public Jato(String marca, String modelo, int velocidade, String cor){
+        
+        super(marca, modelo);
         this.velocidade = velocidade;
         this.cor = cor;
 
@@ -20,15 +32,17 @@ public class Jato extends Aeronave{
     public int getVelocidade(){
         return velocidade;
     }
-    public String getCor(){
-        return cor;
-    }
     public void setVelocidade(int velocidade){
         this.velocidade = velocidade;
     }
+    public String getCor(){
+        return cor;
+    }    
     public void setCor(String cor){
         this.cor = cor;
     }
+
+/*
     public static Jato getJato(int id) throws Exception {
         for (Jato jato : jatos) {
             if (jato.getId() == id) {
@@ -42,11 +56,15 @@ public class Jato extends Aeronave{
         Jato jato = getJato(id);
         jatos.remove(jato);
     }
-    
+*/    
     @Override
     public String toString() {
         return super.toString() 
         + "Velocidade =" + velocidade + "\n"
         + "Cor =" + cor + "\n";
+    }
+    
+    public static Jato getById(int id) {
+        return new Jato();
     }
 }
