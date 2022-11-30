@@ -4,9 +4,10 @@ public class Helicoptero extends Aeronave{
 
     private int capacidade;
     private String cor;
+    public static ArrayList<Helicoptero> helicopteros = new ArrayList<>();
+    public Helicoptero(){
 
-
-    private static ArrayList<Helicoptero> helicopteros = new ArrayList<>();
+    }
 
     public Helicoptero(int id, String marca, String modelo, int capacidade, String cor){
         
@@ -17,18 +18,29 @@ public class Helicoptero extends Aeronave{
         helicopteros.add(this);
     }
 
+    public Helicoptero(String marca, String modelo, int capacidade, String cor){
+        
+        super(marca, modelo);
+        this.capacidade = capacidade;
+        this.cor = cor;
+
+        helicopteros.add(this);
+    }
+
     public int getCapacidade(){
         return capacidade;
-    }
-    public String getCor(){
-        return cor;
     }
     public void setCapacidade(int capacidade){
         this.capacidade = capacidade;
     }
+    public String getCor(){
+        return cor;
+    }    
     public void setCor(String cor){
         this.cor = cor;
     }
+
+/*
     public static Helicoptero getHelicoptero(int id) throws Exception {
         for (Helicoptero helicoptero : helicopteros) {
             if (helicoptero.getId() == id) {
@@ -42,11 +54,15 @@ public class Helicoptero extends Aeronave{
         Helicoptero helicoptero = getHelicoptero(id);
         helicopteros.remove(helicoptero);
     }
-    
+*/   
     @Override
     public String toString() {
         return super.toString() 
         + "Capacidade =" + capacidade + "\n"
         + "Cor =" + cor + "\n";
+    }
+
+    public static Helicoptero getById(int id) {
+        return new Helicoptero();
     }
 }
