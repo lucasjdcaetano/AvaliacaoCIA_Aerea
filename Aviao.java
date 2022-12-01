@@ -42,8 +42,7 @@ public class Aviao extends Aeronave{
         this.prefixo = prefixo;
     }
 
-/*
-    public static Aviao getAviao(int id) throws Exception {
+    public static Aviao getById(int id) throws Exception {
         for (Aviao aviao : avioes) {
             if (aviao.getId() == id) {
                 return aviao;
@@ -53,18 +52,18 @@ public class Aviao extends Aeronave{
     }
 
     public static void removeAviao(int id) throws Exception {
-        Aviao aviao = getAviao(id);
+        Aviao aviao = getById(id);
         avioes.remove(aviao);
     }
-*/
+
     @Override
     public String toString() {
         return super.toString() 
         + "Capacidade =" + capacidade + "\n"
         + "Prefixo =" + prefixo + "\n";
     }
-
+    /*
     public static Aviao getById(int id) {
         return new Aviao();
-    }
+    }*/
 }

@@ -42,8 +42,8 @@ public class Jato extends Aeronave{
         this.cor = cor;
     }
 
-/*
-    public static Jato getJato(int id) throws Exception {
+
+    public static Jato getById(int id) throws Exception {
         for (Jato jato : jatos) {
             if (jato.getId() == id) {
                 return jato;
@@ -52,19 +52,19 @@ public class Jato extends Aeronave{
         throw new Exception("Jato não encontrado");
     }
 
-    public static void removeHelicoptero(int id) throws Exception {
-        Jato jato = getJato(id);
+    public static void removeJato(int id) throws Exception {
+        Jato jato = getById(id);
         jatos.remove(jato);
     }
-*/    
+    
     @Override
     public String toString() {
         return super.toString() 
         + "Velocidade =" + velocidade + "\n"
         + "Cor =" + cor + "\n";
     }
-    
+    /*
     public static Jato getById(int id) {
         return new Jato();
-    }
+    }*/
 }

@@ -27,7 +27,7 @@ public class Pista implements GetId {
         public void setNumero(String numero){
             this.numero = numero;
         }
-        public static Pista getPista(int id) throws Exception {
+        public static Pista getById(int id) throws Exception {
             for (Pista pista : pistas) {
                 if (pista.getId() == id) {
                     return pista;
@@ -37,7 +37,7 @@ public class Pista implements GetId {
         }
     
         public static void removePista(int id) throws Exception {
-            Pista pista = getPista(id);
+            Pista pista = getById(id);
             pistas.remove(pista);
             // remover pista: Pista pistaExcluida =  "select *from pista where id_pista =" +id;
 
@@ -49,7 +49,7 @@ public class Pista implements GetId {
         public String toString() {
             return "Número =" + numero + "\n";
         }
-        
+        /*
         public static Pista getById(int id) {
             for(Pista pista : pistas){
                 if(pista.getId() == id){
@@ -60,7 +60,5 @@ public class Pista implements GetId {
             // PrepareStatement stmp = naoseioq.execute(query); 
 
             return null;
-
-
-        }
+        }*/
 }

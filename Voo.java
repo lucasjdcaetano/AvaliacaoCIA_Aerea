@@ -38,7 +38,7 @@ public class Voo{
      Helicoptero helicoptero,
      int idHelicoptero,
      Jato jato,
-     int idJato){
+     int idJato) throws Exception{
 
         this.id = id;
         this.numero = numero;
@@ -74,7 +74,7 @@ public class Voo{
      Helicoptero helicoptero,
      int idHelicoptero,
      Jato jato,
-     int idJato){
+     int idJato) throws Exception {
         this.numero = numero;
         this.data = data;
         this.hora = hora;
@@ -153,7 +153,7 @@ public class Voo{
     public void setIdPista(int idPista){
         this.idPista = idPista;
     }
-    public Pista getPista(){
+    public Pista getPista() throws Exception {
         return Pista.getById(idPista);
     }
     public void setPista(Pista pista){
@@ -165,7 +165,7 @@ public class Voo{
     public void setIdAviao(int idAviao){
         this.idAviao = idAviao;
     }
-    public Aviao getAviao(){
+    public Aviao getAviao() throws Exception{
         return Aviao.getById(idAviao);
     }
     public void setAviao(Aviao aviao){
@@ -177,7 +177,7 @@ public class Voo{
     public void setIdHelicoptero(int idHelicoptero){
         this.idHelicoptero = idHelicoptero;
     }
-    public Helicoptero getHelicoptero(){
+    public Helicoptero getHelicoptero() throws Exception {
         return Helicoptero.getById(idHelicoptero);
     }
     public void setHelicoptero(Helicoptero helicoptero){
@@ -189,7 +189,7 @@ public class Voo{
     public void setIdJato(int idJato){
         this.idJato = idJato;
     }
-    public Jato getJato(){
+    public Jato getJato() throws Exception {
         return Jato.getById(idJato);
     }
     public void setJato(Jato jato){

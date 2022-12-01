@@ -14,7 +14,7 @@ public class Hangar implements GetId {
 
     }
 
-    public Hangar(int id, String local, Aviao aviao, int idAviao){
+    public Hangar(int id, String local, Aviao aviao, int idAviao)throws Exception{
         
         this.id = GetId.getNextId(hangares);
         this.local = local;
@@ -22,7 +22,7 @@ public class Hangar implements GetId {
         this.idAviao = idAviao;
         }
 
-    public Hangar(String local, Aviao aviao, int idAviao){
+    public Hangar(String local, Aviao aviao, int idAviao)throws Exception{
     
         this.local = local;
         this.aviao = Aviao.getById(idAviao);
@@ -41,7 +41,7 @@ public class Hangar implements GetId {
         public void setLocal(String local){
             this.local = local;
         }
-        public static Hangar getHangar(int id) throws Exception {
+        public static Hangar getById(int id) throws Exception {
             for (Hangar hangar : hangares) {
                 if (hangar.getId() == id) {
                     return hangar;
@@ -51,7 +51,7 @@ public class Hangar implements GetId {
         }
     
         public static void removeHangar(int id) throws Exception {
-            Hangar hangar = getHangar(id);
+            Hangar hangar = getById(id);
             hangares.remove(hangar);
         }
         

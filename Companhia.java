@@ -44,7 +44,7 @@ public class Companhia implements GetId {
             this.cpf = cpf;
         }
         
-        public static Companhia getCompanhia(int id) throws Exception {
+        public static Companhia getById(int id) throws Exception {
             for (Companhia companhia : companhias) {
                 if (companhia.getId() == id) {
                     return companhia;
@@ -53,7 +53,7 @@ public class Companhia implements GetId {
             throw new Exception("Companhia não encontrada");
         }  
         public static void removeCompanhia(int id) throws Exception {
-            Companhia companhia = getCompanhia(id);
+            Companhia companhia = getById(id);
             companhias.remove(companhia);
         }
 
@@ -63,6 +63,7 @@ public class Companhia implements GetId {
             return "Nome = " + nome + "\n"
                 + "CPF = " + cpf + "\n";
         }
+        /* 
         public static Companhia getById(int id) {
             return new Companhia();
         }
@@ -79,6 +80,6 @@ public class Companhia implements GetId {
             }
 
             return false;
-        }    
+        }    */
 
 }

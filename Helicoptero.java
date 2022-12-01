@@ -40,29 +40,28 @@ public class Helicoptero extends Aeronave{
         this.cor = cor;
     }
 
-/*
-    public static Helicoptero getHelicoptero(int id) throws Exception {
+    public static Helicoptero getById(int id) throws Exception {
         for (Helicoptero helicoptero : helicopteros) {
             if (helicoptero.getId() == id) {
                 return helicoptero;
             }
         }
-        throw new Exception("Helicóptero não encontrada");
+        throw new Exception("Helicóptero não encontrado");
     }
 
     public static void removeHelicoptero(int id) throws Exception {
-        Helicoptero helicoptero = getHelicoptero(id);
+        Helicoptero helicoptero = getById(id);
         helicopteros.remove(helicoptero);
     }
-*/   
+
     @Override
     public String toString() {
         return super.toString() 
         + "Capacidade =" + capacidade + "\n"
         + "Cor =" + cor + "\n";
     }
-
+    /*
     public static Helicoptero getById(int id) {
         return new Helicoptero();
-    }
+    }*/
 }
