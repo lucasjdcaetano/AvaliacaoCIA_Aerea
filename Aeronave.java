@@ -21,7 +21,6 @@ public abstract class Aeronave implements GetId{
         this.marca = marca;
         this.modelo = modelo;
         aeronaves.add(this);
-
     }
 
     public int getId(){
@@ -50,12 +49,12 @@ public abstract class Aeronave implements GetId{
             + "Modelo=" + modelo + "\n";
     }
 
-    public static Aeronave getById(int id) {
-        for(Aeronave aero : aeronaves){
-            if(aero.getId() == id){
-                return aero;
+    public static Aeronave getById(int id) throws Exception {
+        for(Aeronave aeronave : aeronaves){
+            if(aeronave.getId() == id){
+                return aeronave;
             }
         }
-        return null;
+        throw new Exception("Aeronave não encontrada");
     }
 }
