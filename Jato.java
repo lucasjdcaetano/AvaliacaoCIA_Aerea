@@ -63,8 +63,7 @@ public class Jato extends Aeronave{
         + "Velocidade =" + velocidade + "\n"
         + "Cor =" + cor + "\n";
     }
-    /*
-    public static Jato getById(int id) {
-        return new Jato();
-    }*/
+    public static ArrayList<Jato> getJatos() {
+        return jatos;
+    }
 }

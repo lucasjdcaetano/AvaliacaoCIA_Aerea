@@ -60,8 +60,7 @@ public class Helicoptero extends Aeronave{
         + "Capacidade =" + capacidade + "\n"
         + "Cor =" + cor + "\n";
     }
-    /*
-    public static Helicoptero getById(int id) {
-        return new Helicoptero();
-    }*/
+    public static ArrayList<Helicoptero> getHelicopteros() {
+        return helicopteros;
+    }
 }

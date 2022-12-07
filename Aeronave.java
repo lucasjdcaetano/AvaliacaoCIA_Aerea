@@ -57,4 +57,7 @@ public abstract class Aeronave implements GetId{
         }
         throw new Exception("Aeronave não encontrada");
     }
+    public static ArrayList<Aeronave> getAeronaves() {
+        return aeronaves;
+    }
 }

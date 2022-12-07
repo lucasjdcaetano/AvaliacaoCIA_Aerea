@@ -20,6 +20,8 @@ public class Hangar implements GetId {
         this.local = local;
         this.aviao = Aviao.getById(idAviao);
         this.idAviao = idAviao;
+
+        hangares.add(this);
         }
 
     public Hangar(String local, Aviao aviao, int idAviao)throws Exception{
@@ -58,5 +60,8 @@ public class Hangar implements GetId {
         @Override
         public String toString() {
             return "Local =" + local + "\n";
+        }
+        public static ArrayList<Hangar> getHangares() {
+            return hangares;
         }
 }
