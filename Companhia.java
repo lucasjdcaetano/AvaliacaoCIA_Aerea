@@ -6,23 +6,25 @@ public class Companhia implements GetId {
 
     private int id;
     private String nome;
-    private String cpf;
+    private String cnpj;
     public static ArrayList<Companhia> companhias = new ArrayList<>();
 
     public Companhia() {
 
     }
 
-    public Companhia(int id, String nome, String cpf){
+    public Companhia(int id, String nome, String cnpj){
         
         this.id = id;
         this.nome = nome;
-        this.cpf = cpf;
+        this.cnpj = cnpj;
+        companhias.add(this);
+
         }
 
-    public Companhia(String nome, String cpf){
+    public Companhia(String nome, String cnpj){
         this.nome = nome;
-        this.cpf = cpf;
+        this.cnpj = cnpj;
         }
         
         public int getId() {
@@ -40,8 +42,8 @@ public class Companhia implements GetId {
         public String getCpf(){
             return nome;
         }
-        public void setCpf(String cpf){
-            this.cpf = cpf;
+        public void setCnpj(String cnpj){
+            this.cnpj = cnpj;
         }
         
         public static Companhia getById(int id) throws Exception {
@@ -61,25 +63,10 @@ public class Companhia implements GetId {
         @Override
         public String toString() {
             return "Nome = " + nome + "\n"
-                + "CPF = " + cpf + "\n";
+                + "CPF = " + cnpj + "\n";
         }
-        /* 
-        public static Companhia getById(int id) {
-            return new Companhia();
+        public static ArrayList<Companhia> getCompanhias() {
+            return companhias;
         }
-        public static boolean getCompanhia2(int id) {
-            try{
-                Connection connection = DAO.createConnection();
-                PreparedStatement stmt = connection.prepareStatement("SELECT * FROM companhia WHERE id = " + id + ";");
-                stmt.execute();
-                // Pista retornoPista = stmt; se, sendo stmt a variável que vai carregar um "array list" do bd
-                stmt.close();
-                // return retornoPista;
-            }catch(Exception e){
-                System.out.println(e);
-            }
-
-            return false;
-        }    */
 
 }

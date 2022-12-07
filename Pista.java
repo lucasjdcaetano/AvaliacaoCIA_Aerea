@@ -49,16 +49,17 @@ public class Pista implements GetId {
         public String toString() {
             return "Número =" + numero + "\n";
         }
-        /*
-        public static Pista getById(int id) {
+        
+        public static Pista verificaId(int id) {
             for(Pista pista : pistas){
                 if(pista.getId() == id){
                     return pista;
                 }
             }
-            // String query = "Select * from pista where id_pista =" + id;
-            // PrepareStatement stmp = naoseioq.execute(query); 
-
             return null;
-        }*/
+        }
+        public static ArrayList<Pista> getPistas() {
+            return pistas;
+        }
+
 }
